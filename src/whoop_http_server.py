@@ -38,7 +38,7 @@ def initialize_whoop_client() -> None:
     logger.info(f"Looking for .env file at: {env_path}")
     
     if not env_path.exists():
-        logger.error(f"Environment file not found at {env_path}")
+        load_dotenv()
         return
     
     load_dotenv(dotenv_path=env_path)
